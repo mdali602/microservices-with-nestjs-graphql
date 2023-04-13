@@ -22,7 +22,7 @@ import { Project } from './employee/entities/project.entity';
       driver: ApolloFederationDriver,
       // autoSchemaFile: join(process.cwd(), 'src/graphql-schema.gql'),
       autoSchemaFile: {
-        // federation: 2,
+        federation: 2,
         path: join(process.cwd(), 'src/graphql-schema.gql'),
       },
       buildSchemaOptions: {
