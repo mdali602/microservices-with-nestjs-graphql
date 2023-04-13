@@ -1,4 +1,4 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, ID, InputType } from '@nestjs/graphql';
 
 @InputType()
 export class EmployeeCreateDTO {
@@ -14,6 +14,9 @@ export class EmployeeCreateDTO {
   @Field({ nullable: true })
   city: string;
 
-  @Field()
+  @Field(() => ID)
   projectId: string;
+
+  @Field(() => ID)
+  locationId: string;
 }

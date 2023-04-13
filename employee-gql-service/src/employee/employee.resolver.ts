@@ -11,6 +11,7 @@ import { EmployeeCreateDTO } from './dto/create-employee.input';
 import { EmployeeService } from './employee.service';
 import { Employee } from './entities/employee.entity';
 import { Project } from './entities/project.entity';
+import { Location } from './entities/location.entity';
 
 @Resolver(() => Employee)
 export class EmployeeResolver {
@@ -34,6 +35,11 @@ export class EmployeeResolver {
   @ResolveField(() => Project)
   project(@Parent() employee: Employee) {
     return { __typename: 'Project', id: employee.projectId };
+  }
+
+  @ResolveField(() => Location)
+  location(@Parent() employee: Employee) {
+    return { __typename: 'Location', id: employee.locationId };
   }
   /* @ResolveField(() => Project)
   project(@Parent() employee: Employee) {

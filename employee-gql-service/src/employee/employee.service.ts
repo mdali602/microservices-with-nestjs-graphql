@@ -31,6 +31,10 @@ export class EmployeeService {
     return await this.employeeRepository.find({ where: { projectId: id } });
   }
 
+  async forLocation(id: string) {
+    return this.employeeRepository.find({ where: { locationId: id } });
+  }
+
   /* async getProject(id: string): Promise<Project> {
     return this.projectService.findOne(id);
   } */

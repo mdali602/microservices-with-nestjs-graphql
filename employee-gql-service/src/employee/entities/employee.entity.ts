@@ -1,12 +1,8 @@
 import { Directive, Field, ID, ObjectType } from '@nestjs/graphql';
 // import { Project } from 'src/project/entities/project.entity';
-import {
-  Column,
-  Entity,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Project } from './project.entity';
+import { Location } from './location.entity';
 
 @ObjectType()
 @Directive('@key(fields: "id")')
@@ -39,7 +35,14 @@ export class Employee {
   @Field(() => Project)
   project: Project; */
 
-  @Field()
+  @Field(() => ID)
   @Column()
   projectId: string;
+
+  @Field(() => Location)
+  location: Location;
+
+  @Field(() => ID)
+  @Column()
+  locationId: string;
 }

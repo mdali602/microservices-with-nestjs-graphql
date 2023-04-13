@@ -7,6 +7,11 @@ type Project {
   employees: [Employee!]!
 }
 
+type Location {
+  id: ID!
+  employees: [Employee!]!
+}
+
 type Employee {
   id: ID!
   firstName: String!
@@ -14,7 +19,9 @@ type Employee {
   designation: String!
   city: String
   project: Project!
-  projectId: String!
+  projectId: ID!
+  location: Location!
+  locationId: ID!
 }
 
 type Query {
@@ -31,5 +38,6 @@ input EmployeeCreateDTO {
   lastName: String!
   designation: String!
   city: String
-  projectId: String!
+  projectId: ID!
+  locationId: ID!
 }

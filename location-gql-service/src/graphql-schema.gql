@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Location {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  locations: [Location!]!
+  location(id: String!): Location!
+}
+
+type Mutation {
+  createLocation(location: CreateLocationInput!): Location!
+}
+
+input CreateLocationInput {
+  name: String!
+}
